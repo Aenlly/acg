@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>top.aenlly</groupId>
+    <artifactId>acg-dependencies</artifactId>
+    <version>${version}</version>
+
+    <properties>
+        <version>1.0.0-SNAPSHOT</version>
+        <spring-boot.version>2.5.6</spring-boot.version>
+        <spring-boot-test.version>3.0.3</spring-boot-test.version>
+
+        <!-- DB 相关 -->
+        <mybatis-plus-boot-starter.version>3.4.3.2</mybatis-plus-boot-starter.version>
+        <mybatis-plus-generator.version>3.5.0</mybatis-plus-generator.version>
+        <velocity-engine-core.version>2.2</velocity-engine-core.version>
+        <mysql.version>8.0.29</mysql.version>
+        <dynamic-datasource.version>3.5.0</dynamic-datasource.version>
+        <druid.version>1.2.11</druid.version>
+
+        <!-- Web 相关 -->
+        <knife4j.version>3.0.3</knife4j.version>
+
+        <swagger-annotations.version>1.6.6</swagger-annotations.version>
+        <!-- 工具 相关 -->
+        <log4j.version>1.2.17</log4j.version>
+        <hutool.version>5.8.5</hutool.version>
+        <fastjson.version>1.2.83</fastjson.version>
+        <lombok.version>1.18.24</lombok.version>
+
+        <javax.servlet.version>4.0.1</javax.servlet.version>
+        <mapstruct.version>1.4.1.Final</mapstruct.version>
+        <jasypt-spring-boot-starter.version>3.0.4</jasypt-spring-boot-starter.version>
+
+
+        <aj-captcha.version>1.3.0</aj-captcha.version>
+        <!-- 监控相关 -->
+        <skywalking.version>8.7.0</skywalking.version>
+
+
+        <guava.version>30.1.1-jre</guava.version>
+        <guice.version>5.1.0</guice.version>
+
+        <!-- 服务保障相关 -->
+        <resilience4j.version>1.7.1</resilience4j.version>
+
+        <sentinel-web.version>1.8.6</sentinel-web.version>
+
+        <transmittable-thread-local.version>2.12.2</transmittable-thread-local.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>top.aenlly</groupId>
+                <artifactId>acg-common</artifactId>
+                <version>${version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>top.aenlly</groupId>
+                <artifactId>acg-core</artifactId>
+                <version>${version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>top.aenlly</groupId>
+                <artifactId>acg-service</artifactId>
+                <version>${version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>top.aenlly</groupId>
+                <artifactId>acg-mapper</artifactId>
+                <version>${version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>top.aenlly</groupId>
+                <artifactId>acg-autoconfigure</artifactId>
+                <version>${version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-cache</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-validation</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <!-- 热部署依赖 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <!-- mybatis-plus依赖 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+            <!-- mybatis-plus代码自动生成，配合模板引擎使用 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus-generator.version}</version>
+            </dependency>
+
+            <!-- 模板引擎，用于快速创建mvc代码 -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity-engine-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId> <!-- 多数据源 -->
+                <version>${dynamic-datasource.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId> <!-- 加解密 -->
+                <version>${jasypt-spring-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter-test</artifactId>
+                <version>${spring-boot-test.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax.servlet.version}</version>
+            </dependency>
+
+            <!-- 监控相关 -->
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-trace</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>mapstruct</artifactId>
+                        <groupId>org.mapstruct</groupId> <!-- 避免冲突 -->
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>swagger-annotations</artifactId>
+                        <groupId>io.swagger</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-ratelimiter</artifactId>
+                <version>${resilience4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-spring-boot2</artifactId>
+                <version>${resilience4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.anji-plus</groupId>
+                <artifactId>spring-boot-starter-captcha</artifactId>
+                <version>${aj-captcha.version}</version>
+            </dependency>
+
+            <!-- sentinel 流控 -->
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-web-servlet</artifactId>
+                <version>${sentinel-web.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId> <!-- 解决 ThreadLocal 父子线程的传值问题 -->
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

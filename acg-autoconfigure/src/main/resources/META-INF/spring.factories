@@ -1,0 +1,11 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  top.aenlly.acg.config.log.AcgApiLogAutoConfiguration,\
+  top.aenlly.acg.config.operatelog.AcgOperateLogAutoConfiguration,\
+  top.aenlly.acg.config.mybatis.AcgDataSourceAutoConfiguration,\
+  top.aenlly.acg.config.mybatis.AcgMybatisAutoConfiguration,\
+  top.aenlly.acg.config.web.AcgWebAutoConfiguration,\
+  top.aenlly.acg.config.web.WebEnumsMvcConfig,\
+  top.aenlly.acg.config.jackson.AcgJacksonAutoConfiguration,\
+  top.aenlly.acg.config.swagger.AcgSwaggerAutoConfiguration,\
+  top.aenlly.acg.config.captcha.AcgCaptchaConfiguration
+

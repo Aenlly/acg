@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>acg</artifactId>
+        <groupId>top.aenlly</groupId>
+        <version>${version}</version>
+    </parent>
+    <packaging>jar</packaging>
+    <artifactId>acg-app</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>top.aenlly</groupId>
+            <artifactId>acg-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>top.aenlly</groupId>
+            <artifactId>acg-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>top.aenlly</groupId>
+            <artifactId>acg-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>top.aenlly</groupId>
+            <artifactId>acg-autoconfigure</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.1.6</version>
+                <!--这里写上main方法所在类的路径-->
+                <configuration>
+                    <mainClass>top.aenlly.acg.AcgApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <!-- 过滤后缀为pem、pfx的证书文件 -->
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>cer</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>pem</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>pfx</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>jks</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,25 @@
+package top.aenlly.acg.core.logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import top.aenlly.acg.core.logger.dto.ApiAccessLogCreateReqDTO;
+
+import javax.validation.Valid;
+
+/**
+ * API 访问日志的 API 接口
+ *
+ * @author anonymous
+ */
+public interface ApiAccessLogApi {
+
+    Logger logger = LoggerFactory.getLogger("accessPrinterLogger");
+
+    /**
+     * 创建 API 访问日志
+     *
+     * @param createDTO 创建信息
+     */
+    void createApiAccessLog(@Valid ApiAccessLogCreateReqDTO createDTO);
+
+}
