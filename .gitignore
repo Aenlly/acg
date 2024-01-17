@@ -4,7 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-!**/application-password.yml
+**/application-password.yml
+*.log
 
 ### STS ###
 .apt_generated

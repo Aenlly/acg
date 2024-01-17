@@ -6,7 +6,6 @@ import com.anji.captcha.service.CaptchaService;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -18,7 +17,7 @@ import static top.aenlly.acg.common.exception.util.ServiceExceptionUtil.exceptio
 
 @Api(tags = "图新验证码验证码")
 @RestController
-@RequestMapping("/captcha")
+// @RequestMapping("/captcha") 使用默认的CaptchaController
 public class AjCaptchaController {
 
     @Resource

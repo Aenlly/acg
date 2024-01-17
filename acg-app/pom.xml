@@ -22,6 +22,10 @@
         </dependency>
         <dependency>
             <groupId>top.aenlly</groupId>
+            <artifactId>acg-mapper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>top.aenlly</groupId>
             <artifactId>acg-core</artifactId>
         </dependency>
         <dependency>

@@ -2,10 +2,7 @@ package top.aenlly.acg.bo.user;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import top.aenlly.acg.common.pojo.VerifyBaseVo;
 
 import javax.validation.constraints.Email;
@@ -18,6 +15,7 @@ import javax.validation.constraints.NotNull;
  * @create 2024/01/16 17:39:46
  * @since 1.0.0
  */
+@EqualsAndHashCode(callSuper = true)
 @ApiModel("用户 APP - 邮箱 + 密码登录 Request VO")
 @Data
 @NoArgsConstructor

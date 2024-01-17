@@ -1,10 +1,10 @@
 package top.aenlly.acg.bo.user;
 
-import com.hisun.rencai.module.sms.enums.SmsSceneEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
+import top.aenlly.acg.common.enums.SmsSceneEnum;
 import top.aenlly.acg.common.validation.Mobile;
 
 import javax.validation.constraints.NotEmpty;
